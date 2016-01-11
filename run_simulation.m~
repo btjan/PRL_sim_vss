@@ -12,8 +12,7 @@ sd_m = 0.04;%SD of motor noise
 T =30;
 %% Neurons
 nNeurons = 81;
-%The location of each neuron is known up to a proability distributon 
-%initialize the mean and SD of neurons
+%The location of each neuron is known up to a proability d
 init_neuron_mean = linspace(-40, 40, nNeurons);
 sigma_0 = 4*ones(1, nNeurons);
 for i=1:nNeurons
@@ -30,11 +29,11 @@ for i=1:nNeurons
 end
 cnt = zeros(1, nNeurons);
 %% saccade targets
-num_biased_trials = 10;%on these trials, the target is forced to be on the left (or right)  
+num_biased_trials = 10;
 left_biased = 0;
 right_biased = 0;
 
-sct_ind = (nNeurons+1)/2-scotomaRad : (nNeurons+1)/2+scotomaRad;%where scotoma falls
+sct_ind = (nNeurons+1)/2-scotomaRad : (nNeurons+1)/2+scotomaRad;
 
 if random_targets == 1
     cortex_ind= 1:nNeurons;
