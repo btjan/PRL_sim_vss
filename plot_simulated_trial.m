@@ -44,7 +44,6 @@ end
 
 plot(neuron(current_tar_ind).mean, t, '+','MarkerSize',10, 'color',[.3 .3 .3] )
 plot(neuron(best_RL_ind).mean, t, 'o', 'MarkerSize', 8,'color', [.3 .3 .3]);
-%plot(landing_loc(t), t, '+', 'MarkerSize', 10,'color', trial_clr-.3 );
 plot(actual_retinal_loc(t), t, '.', 'MarkerSize', 20,'color','r');
 
 

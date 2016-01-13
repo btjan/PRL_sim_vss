@@ -9,7 +9,7 @@ scotomaRad = 6;% radious of scotoma in cortical coordinates, in mm
 v = -3:.1:3 ; %displacement from the neuron mean (in cortical mm)
 sd_e = 0.05;% measurment noise
 sd_m = 0.04;%SD of motor noise
-T =30;
+T =30;%forgetful function constant
 %% Neurons
 nNeurons = 81;
 %The location of each neuron is known up to a proability distributon 
@@ -105,10 +105,9 @@ for t=1:max_nTrials
         ' SD= ', num2str(neuron(best_RL_ind).SD), '\n']);
     %observe the discrepancy
     dij = normrnd(0, sqrt(sd_m^2*(neuron(best_RL_ind).mean - neuron(current_tar_ind).mean)^2 + sd_e^2));
-    landing_loc(t) = dij + neuron(current_tar_ind).mean;
-        actual_retinal_loc(t) = dij + neuron(best_RL_ind).mean;
+    actual_retinal_loc(t) = dij + neuron(best_RL_ind).mean;
     plot_simulated_trial;
-        
+    
     if simulate_saccade == 1
         %update the priors
     
